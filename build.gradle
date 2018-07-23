@@ -1,0 +1,15 @@
+// Executes Webpack
+task webpack(type: Exec) {
+    inputs.file("package-lock.json").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.dir("src").withPathSensitivity(PathSensitivity.RELATIVE)
+    inputs.file("webpack.config.js")
+    outputs.dir("$buildDir")
+    outputs.cacheIf { true }
+
+    commandLine "$projectDir/node_modules/.bin/webpack", "--display-error-details"
+}
+
+// Cleans Build Directory
+task clean(type: Delete) {
+    delete 'build'
+}
