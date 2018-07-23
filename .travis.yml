@@ -1,0 +1,7 @@
+language: node_js
+install:
+- npm install
+script: "./gradlew clean build"
+cache:
+  directories:
+    - "node_modules"
