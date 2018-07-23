@@ -2,6 +2,18 @@
 
 An example of building a Javascript application with Webpack and Gradle.
 
+## Building the Project
+You can build the project using the following Gradle command:
+
+    $ ./gradlew clean build
+
+This will bundle the javascript with webpack and create a zip file of the `dist` folder.
+
+## Running the Project
+You can run the project using the webpack-dev-server with the following Gradle command:
+
+    $ ./gradlew webpackServer
+
 ## License
 Copyright 2018 Greg Whitaker
 
