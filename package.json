@@ -4,7 +4,8 @@
   "description": "An example of building a Javascript application with Webpack and Gradle.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "webpack-dev-server --config './webpack.config.js'"
   },
   "keywords": [],
   "author": "Greg Whitaker",
@@ -15,7 +16,8 @@
     "babel-preset-env": "^1.7.0",
     "copy-webpack-plugin": "^4.5.2",
     "webpack": "^2.7.0",
-    "webpack-cli": "^3.1.0"
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^2.7.0"
   },
   "dependencies": {
     "lodash": "^4.17.10"

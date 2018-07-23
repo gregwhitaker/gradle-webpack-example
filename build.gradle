@@ -3,13 +3,26 @@ task webpack(type: Exec) {
     inputs.file("package-lock.json").withPathSensitivity(PathSensitivity.RELATIVE)
     inputs.dir("src").withPathSensitivity(PathSensitivity.RELATIVE)
     inputs.file("webpack.config.js")
-    outputs.dir("$buildDir")
+    outputs.dir("dist")
     outputs.cacheIf { true }
 
     commandLine "$projectDir/node_modules/.bin/webpack", "--display-error-details"
 }
 
+// Starts Webpack Dev Server
+task webpackServer(type: Exec, dependsOn: webpack) {
+    commandLine "$projectDir/node_modules/.bin/webpack-dev-server", "--config", "./webpack.config.js"
+}
+
+// Package Application as Zip
+task build(type: Zip, dependsOn: webpack) {
+    from 'dist/'
+    include '*'
+    archiveName "${rootProject.name}.zip"
+    destinationDir file("${buildDir}")
+}
+
 // Cleans Build Directory
 task clean(type: Delete) {
-    delete 'build'
+    delete 'build', 'dist'
 }
