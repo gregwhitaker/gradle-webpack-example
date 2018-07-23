@@ -1,4 +1,5 @@
 # gradle-webpack-example
+[![Build Status](https://travis-ci.org/gregwhitaker/gradle-webpack-example.svg?branch=master)](https://travis-ci.org/gregwhitaker/gradle-webpack-example)
 
 An example of building a Javascript application with Webpack and Gradle.
 
