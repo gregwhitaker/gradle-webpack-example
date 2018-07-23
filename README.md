@@ -14,6 +14,10 @@ You can run the project using the webpack-dev-server with the following Gradle c
 
     $ ./gradlew webpackServer
 
+
+## Bugs and Feedback
+For bugs, questions, and discussions please use the [Github Issues](https://github.com/gregwhitaker/gradle-webpack-example/issues).
+
 ## License
 Copyright 2018 Greg Whitaker
 
